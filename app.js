@@ -36,13 +36,13 @@ function calculateBMI() {
   
         // Dividing as per the bmi conditions
         if (bmi < 18.6) result.innerHTML =
-            `Under Weight : <span>${bmi}</span>`;
+            `fill up the trough your starving piggie : <span>${bmi}</span>`;
   
         else if (bmi >= 18.6 && bmi < 24.9) 
             result.innerHTML = 
-                `Normal : <span>${bmi}</span>`;
+                `NORMIE PIG : <span>${bmi}</span>`;
   
         else result.innerHTML =
-            `Over Weight : <span>${bmi}</span>`;
+            `uhm... you are a FAT PIGGY : <span>${bmi}</span>`;
     }
 }
