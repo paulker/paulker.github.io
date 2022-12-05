@@ -37,6 +37,10 @@ function calculateBMI() {
         // Dividing as per the bmi conditions
         if (bmi < 18.6) result.innerHTML =
             `fill up the trough your starving piggie : <span>${bmi}</span>`;
+        
+        else if (bmi == 22.15 ) 
+            result.innerHTML = 
+                `KING PIG YOU ARE COOLEST PIG, SEBI COULD NEVER : <span>${bmi}</span>`;
   
         else if (bmi >= 18.6 && bmi < 24.9) 
             result.innerHTML = 
