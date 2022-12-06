@@ -41,6 +41,10 @@ function calculateBMI() {
         else if (bmi == 22.15) 
             result.innerHTML = 
                 `KING PIG YOU ARE COOLEST PIG, SEBI COULD NEVER : <span>${bmi}</span>`;
+        
+                else if (bmi == 22.16) 
+            result.innerHTML = 
+                `***BENGALI ALERT BENGALI ALERT BENGALI ALERT*** OH MY GOD YOU ARE FAT AND BENGALI!!!! : <span>${bmi}</span>`;
   
         else if (bmi >= 18.6 && bmi < 24.9) 
             result.innerHTML = 
