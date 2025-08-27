@@ -31,6 +31,21 @@
       75%  { color: #254878;}
       100% { color: #04a1d5;}
     }
+    .fart-btn {
+      margin-top: 20px;
+      font-size: 2rem;
+      padding: 12px 32px;
+      background: #ef0a1a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .fart-btn:hover {
+      background: #10c018;
+    }
   </style>
   <!-- Include JS files -->
   <script src="app.js"></script>
@@ -65,6 +80,23 @@
     <div style="text-align:center; margin-top: 20px;">
       <h2>Vietnam beautiful hat</h2>
     </div>
+    <!-- Fart Sound: This audio element autoplays a fart noise on page load.
+         The controls are hidden; the sound will play automatically. 
+         The button below allows the user to replay the sound if they want. -->
+    <audio id="fart-sound" src="https://www.soundjay.com/human/fart-01.mp3" preload="auto"></audio>
+    <div style="text-align:center;">
+      <button class="fart-btn" onclick="document.getElementById('fart-sound').volume=1.0;document.getElementById('fart-sound').play()">💨 Play Fart Noise Again</button>
+    </div>
+    <script>
+      // On page load, play the fart noise once automatically at max volume (1.0).
+      window.addEventListener('DOMContentLoaded', function() {
+        var fartAudio = document.getElementById('fart-sound');
+        if(fartAudio) {
+          fartAudio.volume = 1.0; // Max out the volume!
+          fartAudio.play().catch(function(){ /* ignore autoplay errors */ });
+        }
+      });
+    </script>
   </div>
 </body>
 </html>
