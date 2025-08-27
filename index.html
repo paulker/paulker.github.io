@@ -1,102 +1,67 @@
 <!DOCTYPE html>
 <html>
-<div class="blink-bg">
-
 <head>
-<title>Hey... how are you?</title>
+  <title>Hey... how are you?</title>
+  <style>
+    .blink-bg {
+      color: #fff;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 5px;
+      animation: blinkingBackground 2s infinite;
+      width: 100%; height: 100%;
+    }
+    @keyframes blinkingBackground {
+      0%   { background-color: #10c018;}
+      25%  { background-color: #1056c0;}
+      50%  { background-color: #ef0a1a;}
+      75%  { background-color: #254878;}
+      100% { background-color: #04a1d5;}
+    }
+    .blink-text {
+      color: #000;
+      font-weight: bold;
+      font-size: 2rem;
+      animation: blinkingText 2s infinite;
+    }
+    @keyframes blinkingText {
+      0%   { color: #10c018;}
+      25%  { color: #1056c0;}
+      50%  { color: #ef0a1a;}
+      75%  { color: #254878;}
+      100% { color: #04a1d5;}
+    }
+  </style>
+  <!-- Include JS files -->
+  <script src="app.js"></script>
 </head>
-
 <body>
- <style>
-	.blink-bg{
-		color: #fff;
-		padding: 10px;
-		display: inline-block;
-		border-radius: 5px;
-		animation: blinkingBackground 2s infinite;
-		width: 100%; height: 100%;
-	}
-	@keyframes blinkingBackground{
-		0%        { background-color: #10c018;}
-		25%        { background-color: #1056c0;}
-		50%        { background-color: #ef0a1a;}
-		75%        { background-color: #254878;}
-		100%        { background-color: #04a1d5;}
-	}
-</style> 
-   <center><h1>Sebi wishes...
-   <style>
-	.blink-text{
-		color: #000;
-		font-weight: bold;
-		font-size: 2rem;
-		animation: blinkingText 2s infinite;
-	}
-	@keyframes blinkingText{
-		0%        { color: #10c018;}
-		25%        { color: #1056c0;}
-		50%        { color: #ef0a1a;}
-		75%        { color: #254878;}
-		100%    { color: #04a1d5;}
-	}
-</style>
-    <br><br>I AM</center></h1>
-<center> <iframe width="1600" height="900" src="//www.youtube.com/embed/pihE-4HWZx0?rel=0?version=3&autoplay=1&controls=0&&showinfo=0&loop=1" title="YouTube video player" frameborder="0" allow="ac[...] 
-  </center>
-
-  <head>
-    <!-- Include JS files -->
-    <script src="app.js"></script>
-</head>
-  
-
-    <div class="container">
-        <h1>BMI Calculator (FREEDOM UNITS ONLY)</h1>
-  
-        <!-- Option for providing height 
-            and weight to the user-->
-        <p>Height (in INCHES)</p>
-  
-        <input type="text" id="height">
-  
-        <p>Weight (in AMERICAN POUNDS)</p>
-  
-        <input type="text" id="weight">
-  
-        <button id="btn">Calculate</button>
-  
-        <div id="result"> <h1 style="color:pink;text-align:center;"font-size: x-large>CALCULATE YOUR BMI PIGGY</h1>
-		<style>
-	.blink-text{
-		color: #000;
-		font-weight: bold;
-		font-size: 2rem;
-		animation: blinkingText 2s infinite;
-	}
-	@keyframes blinkingText{
-		0%        { color: #10c018;}
-		25%        { color: #1056c0;}
-		50%        { color: #ef0a1a;}
-		75%        { color: #254878;}
-		100%    { color: #04a1d5;}
-	}
-</style>
-
+  <div class="blink-bg">
+    <center>
+      <h1>Sebi wishes...</h1>
+      <div class="blink-text"><br><br>I AM</div>
+      <iframe width="1600" height="900" src="//www.youtube.com/embed/pihE-4HWZx0?rel=0?version=3&autoplay=1&controls=0&&showinfo=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    <div class="container" style="margin-top:40px;">
+      <h1>BMI Calculator (FREEDOM UNITS ONLY)</h1>
+      <p>Height (in INCHES)</p>
+      <input type="text" id="height">
+      <p>Weight (in AMERICAN POUNDS)</p>
+      <input type="text" id="weight">
+      <button id="btn">Calculate</button>
+      <div id="result">
+        <h1 style="color:pink;text-align:center;font-size:x-large;">CALCULATE YOUR BMI PIGGY</h1>
       </div>
     </div>
-
-<!-- Vietnam section -->
-<div style="text-align:center; margin-top: 30px;">
-  <h2>Vietnam is a beautiful country</h2>
-  <img src="https://cdn11.bigcommerce.com/s-izu49/images/stencil/1280x1280/products/13190/19465/714Z548__32803.1727197111.jpg?c=2" alt="Vietnam" style="max-width: 80%; border-radius: 12px;">
-</div>
-
+    <!-- Vietnam section -->
+    <div style="text-align:center; margin-top: 30px;">
+      <h2>Vietnam is a beautiful country</h2>
+      <img src="https://cdn11.bigcommerce.com/s-izu49/images/stencil/1280x1280/products/13190/19465/714Z548__32803.1727197111.jpg?c=2" alt="Vietnam" style="max-width: 80%; border-radius: 12px;">
+    </div>
+    <br><br>
+    <center>
+      <img src="https://media.istockphoto.com/id/176879345/photo/vietnamese-pot-bellied-pig.jpg?s=1024x1024&w=is&k=20&c=DVTaJLI89QbNCt2guEL7o7mIni_nw88lTu3YsLY23f8=" alt="chinese.com">
+    </center>
+  </div>
 </body>
 </html>
-
-<br>
-<br>
-<center>
-<img src="https://media.istockphoto.com/id/176879345/photo/vietnamese-pot-bellied-pig.jpg?s=1024x1024&w=is&k=20&c=DVTaJLI89QbNCt2guEL7o7mIni_nw88lTu3YsLY23f8=" alt="chinese.com">
-		</center>
-</div>
