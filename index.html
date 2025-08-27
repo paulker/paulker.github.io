@@ -46,11 +46,72 @@
     .fart-btn:hover {
       background: #10c018;
     }
+    /* Punk sidebar */
+    .punk-sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 120px;
+      height: 100vh;
+      background: linear-gradient(135deg, #111 70%, #e60073 100%);
+      border-right: 5px dashed #fff;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      box-shadow: 2px 0 10px #0008;
+    }
+    .punk-word {
+      color: #fff;
+      font-family: 'Impact', 'Arial Black', cursive, sans-serif;
+      font-size: 1.5em;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 0 #e60073, 4px 4px 0 #fff, 0 0 8px #f8f804;
+      margin-bottom: 12px;
+      transform: rotate(-10deg);
+      background: #000;
+      padding: 2px 8px;
+      border-radius: 5px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 8px #e60073;
+      user-select: none;
+    }
+    .punk-sticker {
+      width: 70px;
+      margin: 10px 0;
+      filter: brightness(1.2) contrast(1.4) drop-shadow(0 2px 8px #fff);
+      border: 3px solid #fff;
+      border-radius: 12px;
+      transform: rotate(8deg) scale(1.03);
+      background: #111;
+      transition: transform 0.3s;
+    }
+    .punk-sticker:hover {
+      transform: rotate(-8deg) scale(1.13);
+      border-color: #e60073;
+      box-shadow: 0 0 16px #e60073, 0 0 4px #000;
+    }
+    body {
+      margin-left: 130px !important;
+    }
   </style>
-  <!-- Include JS files -->
   <script src="app.js"></script>
 </head>
 <body>
+  <!-- Punk sidebar with words and stickers -->
+  <div class="punk-sidebar">
+    <div class="punk-word">ANARCHY</div>
+    <div class="punk-word">NO RULES</div>
+    <div class="punk-word">LOUDER!</div>
+    <img class="punk-sticker" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Anarchy-symbol.svg/1200px-Anarchy-symbol.svg.png" alt="Anarchy Sticker" title="Anarchy!"/>
+    <img class="punk-sticker" src="https://cdn.pixabay.com/photo/2014/04/03/11/53/skull-312451_1280.png" alt="Skull Sticker" title="Skull"/>
+    <img class="punk-sticker" src="https://i.imgur.com/2zQ6f5U.png" alt="Punk Rock Sticker" title="Punk Forever"/>
+    <div class="punk-word">STAY RAD</div>
+    <div class="punk-word">FART POWER</div>
+    <img class="punk-sticker" src="https://i.imgur.com/6c5ZtYk.png" alt="Lightning Sticker" title="Lightning"/>
+    <img class="punk-sticker" src="https://i.imgur.com/2cAbK0l.png" alt="Safety Pin Sticker" title="DIY"/>
+  </div>
   <div class="blink-bg">
     <center>
       <h1>Sebi wishes...</h1>
@@ -80,20 +141,50 @@
     <div style="text-align:center; margin-top: 20px;">
       <h2>Vietnam beautiful hat</h2>
     </div>
-    <!-- Fart Sound: This audio element autoplays a fart noise on page load.
-         The controls are hidden; the sound will play automatically. 
-         The button below allows the user to replay the sound if they want. -->
-    <audio id="fart-sound" src="https://www.soundjay.com/human/fart-01.mp3" preload="auto"></audio>
+    <!-- Fart Symphony Section -->
+    <audio id="fart1" src="https://www.soundjay.com/human/fart-01.mp3" preload="auto"></audio>
+    <audio id="fart2" src="https://www.soundjay.com/human/fart-02.mp3" preload="auto"></audio>
+    <audio id="fart3" src="https://www.soundjay.com/human/fart-03.mp3" preload="auto"></audio>
+    <audio id="fart4" src="https://www.soundjay.com/human/fart-04.mp3" preload="auto"></audio>
+    <audio id="fart5" src="https://www.soundjay.com/human/fart-05.mp3" preload="auto"></audio>
     <div style="text-align:center;">
-      <button class="fart-btn" onclick="document.getElementById('fart-sound').volume=1.0;document.getElementById('fart-sound').play()">💨 Play Fart Noise Again</button>
+      <button class="fart-btn" onclick="playFartSymphony()">💨 Play Fart Symphony (EXTREME LOUD)</button>
     </div>
     <script>
-      // On page load, play the fart noise once automatically at max volume (1.0).
+      // Play all fart sounds at max volume, some in sequence, some at the same time (for chaotic effect)
+      function playFartSymphony() {
+        const fartIDs = ["fart1", "fart2", "fart3", "fart4", "fart5"];
+        // Play all at once
+        fartIDs.forEach(id => {
+          const audio = document.getElementById(id);
+          if (audio) {
+            audio.currentTime = 0;
+            audio.volume = 1.0;
+            audio.play().catch(() => {});
+          }
+        });
+        // Repeat several times for extra "billions" effect
+        let repeats = 10; // browser limits, can't really do billions
+        let interval = setInterval(() => {
+          fartIDs.forEach(id => {
+            const audio = document.getElementById(id);
+            if (audio) {
+              audio.currentTime = 0;
+              audio.volume = 1.0;
+              audio.play().catch(() => {});
+            }
+          });
+          repeats--;
+          if (repeats <= 0) clearInterval(interval);
+        }, 400); // play every 400ms
+      }
+
+      // On page load, play a single fart at max volume for tradition
       window.addEventListener('DOMContentLoaded', function() {
-        var fartAudio = document.getElementById('fart-sound');
+        var fartAudio = document.getElementById('fart1');
         if(fartAudio) {
-          fartAudio.volume = 1.0; // Max out the volume!
-          fartAudio.play().catch(function(){ /* ignore autoplay errors */ });
+          fartAudio.volume = 1.0;
+          fartAudio.play().catch(function(){ });
         }
       });
     </script>
